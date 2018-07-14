@@ -1,0 +1,46 @@
+# Server configuration
+server:
+  port: 8080
+  contextPath:
+
+# Spring configuration
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  data.mongodb:
+    host: 10.0.0.9
+    port: 27017
+    database: AEXSharing
+  redis:
+      database: 0
+      host: 10.0.0.16
+      port: 6379
+      password:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+      timeout: 5000
+
+# JWT
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: "Bearer "
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+      register: "auth/register"
+
+# Logging configuration
+logging:
+  level:
+    org.springframework:
+      data: DEBUG
+      security: DEBUG
+
+#spring.boot.admin.url: http://localhost:8080
