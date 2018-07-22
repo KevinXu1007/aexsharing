@@ -1,0 +1,6 @@
+spring:
+   rabbitmq:
+    virtual-host: aex-mq
+    username: aex
+    password: aex
+    addresses: 10.0.0.16:5672
